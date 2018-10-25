@@ -1,9 +1,10 @@
 <?php
-require_once('/path/to/evapi-php/autoload.php');
+
+require_once __DIR__ . '/vendor/autoload.php';
 
 #authenticateUser
 
-$authentication_api_instance = new Swagger\Client\Api\AuthenticationApi();
+$authentication_api_instance = new ExaVault\Sdk\Api\AuthenticationApi();
 $api_key = 'your_api_key_goe_here'; 
 $username = 'existing_username_goes_here';
 $password = 'user_password_goes_here'; 
@@ -29,7 +30,7 @@ try {
 
 #createFolder
 
-$files_folders_api_instance = new Swagger\Client\Api\FilesAndFoldersApi();
+$files_folders_api_instance = new ExaVault\Sdk\Api\FilesAndFoldersApi();
 $folderName = 'api_test_folder'.rand();
 $path = '/';
 
@@ -55,7 +56,7 @@ try{
 
 #getAcitivityLogs
 
-$activity_api_instance = new Swagger\Client\Api\ActivityApi();
+$activity_api_instance = new ExaVault\Sdk\Api\ActivityApi();
 $offset = 0;
 $sort_by = "sort_logs_date"; 
 $sort_order = "desc"; 

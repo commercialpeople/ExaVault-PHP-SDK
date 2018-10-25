@@ -1,0 +1,16 @@
+{
+    "name": "commercialpeople/exavault-php-sdk",
+    "description": "ExaVault PHP SDK",
+    "authors": [
+        {
+            "name": "Diego Mariani",
+            "email": "x@diego.pizza"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ExaVault\\Sdk": "./lib"
+        }
+    }
+}
