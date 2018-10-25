@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,14 @@
 
 namespace ExaVault\Sdk\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ExaVault\Sdk\ApiClient;
+use \ExaVault\Sdk\ApiException;
 
 /**
  * AuthenticationApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +44,16 @@ class AuthenticationApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ExaVault\Sdk\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ExaVault\Sdk\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +65,7 @@ class AuthenticationApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ExaVault\Sdk\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +75,11 @@ class AuthenticationApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ExaVault\Sdk\ApiClient $apiClient set the API client
      *
      * @return AuthenticationApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -95,8 +93,8 @@ class AuthenticationApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $username Name of the user to authenticate. (required)
      * @param string $password User&#39;s password. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\AuthResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\AuthResponse
      */
     public function authenticateUser($api_key, $username, $password)
     {
@@ -112,8 +110,8 @@ class AuthenticationApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $username Name of the user to authenticate. (required)
      * @param string $password User&#39;s password. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\AuthResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\AuthResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function authenticateUserWithHttpInfo($api_key, $username, $password)
     {
@@ -168,15 +166,15 @@ class AuthenticationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\AuthResponse',
+                '\ExaVault\Sdk\Model\AuthResponse',
                 '/authenticateUser'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\AuthResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\AuthResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\AuthResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\AuthResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -192,8 +190,8 @@ class AuthenticationApi
      *
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Response
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\Response
      */
     public function logoutUser($api_key, $access_token)
     {
@@ -208,8 +206,8 @@ class AuthenticationApi
      *
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function logoutUserWithHttpInfo($api_key, $access_token)
     {
@@ -256,15 +254,15 @@ class AuthenticationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\ExaVault\Sdk\Model\Response',
                 '/logoutUser'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

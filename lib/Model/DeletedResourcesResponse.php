@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * DeletedResourcesResponse Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ExaVault\Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -56,7 +56,7 @@ class DeletedResourcesResponse implements ArrayAccess
     protected static $swaggerTypes = [
         'success' => 'int',
         'error' => 'object',
-        'results' => '\Swagger\Client\Model\DeletedResource[]'
+        'results' => '\ExaVault\Sdk\Model\DeletedResource[]'
     ];
 
     /**
@@ -253,7 +253,7 @@ class DeletedResourcesResponse implements ArrayAccess
 
     /**
      * Gets results
-     * @return \Swagger\Client\Model\DeletedResource[]
+     * @return \ExaVault\Sdk\Model\DeletedResource[]
      */
     public function getResults()
     {
@@ -262,7 +262,7 @@ class DeletedResourcesResponse implements ArrayAccess
 
     /**
      * Sets results
-     * @param \Swagger\Client\Model\DeletedResource[] $results 
+     * @param \ExaVault\Sdk\Model\DeletedResource[] $results 
      * @return $this
      */
     public function setResults($results)
@@ -323,10 +323,10 @@ class DeletedResourcesResponse implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

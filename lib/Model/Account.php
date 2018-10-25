@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Object contains all account properties.
- * @package     Swagger\Client
+ * @package     ExaVault\Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -59,7 +59,7 @@ class Account implements ArrayAccess
         'username' => 'string',
         'max_users' => 'int',
         'user_count' => 'int',
-        'master_account' => '\Swagger\Client\Model\User',
+        'master_account' => '\ExaVault\Sdk\Model\User',
         'status' => 'int',
         'branding' => 'bool',
         'custom_domain' => 'bool',
@@ -77,7 +77,7 @@ class Account implements ArrayAccess
         'show_referral_links' => 'bool',
         'external_domains' => 'string',
         'allowed_ip' => 'string',
-        'callback_settings' => '\Swagger\Client\Model\CallbackSettings',
+        'callback_settings' => '\ExaVault\Sdk\Model\CallbackSettings',
         'free_trial' => 'bool',
         'applied_trial' => 'string',
         'client_id' => 'int',
@@ -479,7 +479,7 @@ class Account implements ArrayAccess
 
     /**
      * Gets master_account
-     * @return \Swagger\Client\Model\User
+     * @return \ExaVault\Sdk\Model\User
      */
     public function getMasterAccount()
     {
@@ -488,7 +488,7 @@ class Account implements ArrayAccess
 
     /**
      * Sets master_account
-     * @param \Swagger\Client\Model\User $master_account Master user object.
+     * @param \ExaVault\Sdk\Model\User $master_account Master user object.
      * @return $this
      */
     public function setMasterAccount($master_account)
@@ -875,7 +875,7 @@ class Account implements ArrayAccess
 
     /**
      * Gets callback_settings
-     * @return \Swagger\Client\Model\CallbackSettings
+     * @return \ExaVault\Sdk\Model\CallbackSettings
      */
     public function getCallbackSettings()
     {
@@ -884,7 +884,7 @@ class Account implements ArrayAccess
 
     /**
      * Sets callback_settings
-     * @param \Swagger\Client\Model\CallbackSettings $callback_settings Callback settings of the account.
+     * @param \ExaVault\Sdk\Model\CallbackSettings $callback_settings Callback settings of the account.
      * @return $this
      */
     public function setCallbackSettings($callback_settings)
@@ -1113,10 +1113,10 @@ class Account implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

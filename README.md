@@ -1,4 +1,4 @@
-evapi-php
+ExaVault PHP SDK
 ============
 
 evapi-php is an API client written in PHP for connecting to the
@@ -17,8 +17,9 @@ PHP 5.4.0 and later
 
 ## Installation
 
-1. Clone the repo `git clone https://github.com/ExaVault/evapi-php.git evapi-php` or manually download the library.
-2. Include autoload.php `require_once('/path/to/evapi-php/autoload.php');`
+```sh
+$ composer require commercialpeople/exavault-php-sdk:"dev-master"
+```
 
 ## Getting started 
 
@@ -33,19 +34,19 @@ Once you obtain your API you can use the following snippet. It will allow you to
 
 ```php
 <?php
-require_once('/path/to/evapi-php/autoload.php');
 
-#authenticateUser
+require_once __DIR__ . '/vendor/autoload.php';
 
-$authentication_api_instance = new Swagger\Client\Api\AuthenticationApi();
-$api_key = 'your_api_key_goe_here'; 
-$username = 'existing_username_goes_here';
-$password = 'user_password_goes_here'; 
-$accessToken = '';
+// Authenticate User
+$authApi = new ExaVault\Sdk\Api\AuthenticationApi();
+$apiKey = '<api-key>';
+$username = '<username>';
+$password = '<password>'; 
+$accessToken = '<token>';
 
 try {
 
-  $response = $authentication_api_instance->authenticateUser($api_key, $username, $password);
+  $response = $authApi->authenticateUser($apiKey, $username, $password);
   $loginSuccess = $response['success'];
 
   if ($loginSuccess) {
@@ -56,20 +57,19 @@ try {
   }
 
 } catch (Exception $e) {
-    // server error occured
+    // server error occurred
     echo 'Exception when calling AuthenticationApi->authenticateUser: ', $e->getMessage(), PHP_EOL;
     exit;
 }
 
-#createFolder
-
-$files_folders_api_instance = new Swagger\Client\Api\FilesAndFoldersApi();
+// Create Folder
+$fsApi = new ExaVault\Sdk\Api\FilesAndFoldersApi();
 $folderName = 'api_test_folder'.rand();
 $path = '/';
 
 try{
 
-  $response = $files_folders_api_instance->createFolder($api_key, $accessToken, $folderName, $path);
+  $response = $fsApi->createFolder($apiKey, $accessToken, $folderName, $path);
   $createSuccess = $response['success'];
 
   if ($createSuccess) {
@@ -82,21 +82,20 @@ try{
   }
 
 } catch (Exception $e) {
-    // server error occured
+    // server error occurred
     echo 'Exception when calling FilesAndFoldersApi->createFolder: ', $e->getMessage(), PHP_EOL;
     exit;
 }
 
-#getAcitivityLogs
-
-$activity_api_instance = new Swagger\Client\Api\ActivityApi();
+// Get Activity Logs
+$activityApi = new ExaVault\Sdk\Api\ActivityApi();
 $offset = 0;
-$sort_by = "sort_logs_date"; 
-$sort_order = "desc"; 
+$sort_by = 'sort_logs_date'; 
+$sort_order = 'desc'; 
 
 try {
 
-  $response = $activity_api_instance->getFileActivityLogs($api_key, $accessToken, $offset, $sort_by, $sort_order);
+  $response = $activityApi->getFileActivityLogs($apiKey, $accessToken, $offset, $sort_by, $sort_order);
   $getActivitySuccess = $response['success'];
 
 
@@ -115,11 +114,12 @@ try {
     exit;
 }
 
-# To logout the current user, simply check the $loginSuccess flag that was stored earlier and then call the `logoutUser` method
+// To logout the current user, simply check the $loginSuccess flag
+// that was stored earlier and then call the `logoutUser` method
 if ($loginSuccess) {
-  $authentication_api_instance->logoutUser($api_key, $accessToken);
+  $authApi->logoutUser($apiKey, $accessToken);
 }
-?>
+
 ```
 
 You can find list of all API requets here - [ExaVault API Docs](https://www.exavault.com/developer/api-docs/)

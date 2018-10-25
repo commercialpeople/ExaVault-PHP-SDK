@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
 
 namespace ExaVault\Sdk\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ExaVault\Sdk\ApiClient;
+use \ExaVault\Sdk\ApiException;
+use \ExaVault\Sdk\Configuration;
+use \ExaVault\Sdk\ObjectSerializer;
 
 /**
  * FilesAndFoldersApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class FilesAndFoldersApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ExaVault\Sdk\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ExaVault\Sdk\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ExaVault\Sdk\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class FilesAndFoldersApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ExaVault\Sdk\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class FilesAndFoldersApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ExaVault\Sdk\ApiClient $apiClient set the API client
      *
      * @return FilesAndFoldersApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ExaVault\Sdk\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -95,8 +95,8 @@ class FilesAndFoldersApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param string[] $file_paths Array containing file/folder paths to check. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ExistingResourcesResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\ExistingResourcesResponse
      */
     public function checkFilesExist($api_key, $access_token, $file_paths)
     {
@@ -112,8 +112,8 @@ class FilesAndFoldersApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param string[] $file_paths Array containing file/folder paths to check. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ExistingResourcesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\ExistingResourcesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function checkFilesExistWithHttpInfo($api_key, $access_token, $file_paths)
     {
@@ -172,15 +172,15 @@ class FilesAndFoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ExistingResourcesResponse',
+                '\ExaVault\Sdk\Model\ExistingResourcesResponse',
                 '/checkFilesExist'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ExistingResourcesResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\ExistingResourcesResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ExistingResourcesResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\ExistingResourcesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -198,8 +198,8 @@ class FilesAndFoldersApi
      * @param string $access_token Access token required to make the API call. (required)
      * @param string[] $file_paths Array containing file/folder paths to copy. (required)
      * @param string $destination_path Remote destination path to copy files/folders to. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ModifiedResourcesResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\ModifiedResourcesResponse
      */
     public function copyResources($api_key, $access_token, $file_paths, $destination_path)
     {
@@ -216,8 +216,8 @@ class FilesAndFoldersApi
      * @param string $access_token Access token required to make the API call. (required)
      * @param string[] $file_paths Array containing file/folder paths to copy. (required)
      * @param string $destination_path Remote destination path to copy files/folders to. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ModifiedResourcesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\ModifiedResourcesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function copyResourcesWithHttpInfo($api_key, $access_token, $file_paths, $destination_path)
     {
@@ -280,15 +280,15 @@ class FilesAndFoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ModifiedResourcesResponse',
+                '\ExaVault\Sdk\Model\ModifiedResourcesResponse',
                 '/copyResources'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ModifiedResourcesResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\ModifiedResourcesResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ModifiedResourcesResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\ModifiedResourcesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -306,8 +306,8 @@ class FilesAndFoldersApi
      * @param string $access_token Access token required to make the API call. (required)
      * @param string $folder_name Name of the folder to create. (required)
      * @param string $path Where to create the folder. Use **_/_** to create a folder in the user&#39;s home directory. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Response
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\Response
      */
     public function createFolder($api_key, $access_token, $folder_name, $path)
     {
@@ -324,8 +324,8 @@ class FilesAndFoldersApi
      * @param string $access_token Access token required to make the API call. (required)
      * @param string $folder_name Name of the folder to create. (required)
      * @param string $path Where to create the folder. Use **_/_** to create a folder in the user&#39;s home directory. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function createFolderWithHttpInfo($api_key, $access_token, $folder_name, $path)
     {
@@ -388,15 +388,15 @@ class FilesAndFoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\ExaVault\Sdk\Model\Response',
                 '/createFolder'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -413,8 +413,8 @@ class FilesAndFoldersApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param string[] $file_paths Array containing paths of the files or folder to delete. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\DeletedResourcesResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\DeletedResourcesResponse
      */
     public function deleteResources($api_key, $access_token, $file_paths)
     {
@@ -430,8 +430,8 @@ class FilesAndFoldersApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param string[] $file_paths Array containing paths of the files or folder to delete. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\DeletedResourcesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\DeletedResourcesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteResourcesWithHttpInfo($api_key, $access_token, $file_paths)
     {
@@ -490,15 +490,15 @@ class FilesAndFoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\DeletedResourcesResponse',
+                '\ExaVault\Sdk\Model\DeletedResourcesResponse',
                 '/deleteResources'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\DeletedResourcesResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\DeletedResourcesResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\DeletedResourcesResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\DeletedResourcesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -516,8 +516,8 @@ class FilesAndFoldersApi
      * @param string $access_token Access token required to make the API call. (required)
      * @param string $file_paths Path of file to be downloaded. (required)
      * @param string $download_name The name of the file to be downloaded. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\UrlResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\UrlResponse
      */
     public function getDownloadFileUrl($api_key, $access_token, $file_paths, $download_name = null)
     {
@@ -534,8 +534,8 @@ class FilesAndFoldersApi
      * @param string $access_token Access token required to make the API call. (required)
      * @param string $file_paths Path of file to be downloaded. (required)
      * @param string $download_name The name of the file to be downloaded. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\UrlResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\UrlResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDownloadFileUrlWithHttpInfo($api_key, $access_token, $file_paths, $download_name = null)
     {
@@ -594,15 +594,15 @@ class FilesAndFoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\UrlResponse',
+                '\ExaVault\Sdk\Model\UrlResponse',
                 '/getDownloadFileUrl'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\UrlResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\UrlResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\UrlResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\UrlResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -619,8 +619,8 @@ class FilesAndFoldersApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param string $path Path to get folders for. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResourcePropertiesResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\ResourcePropertiesResponse
      */
     public function getFolders($api_key, $access_token, $path)
     {
@@ -636,8 +636,8 @@ class FilesAndFoldersApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param string $path Path to get folders for. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResourcePropertiesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\ResourcePropertiesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFoldersWithHttpInfo($api_key, $access_token, $path)
     {
@@ -692,15 +692,15 @@ class FilesAndFoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResourcePropertiesResponse',
+                '\ExaVault\Sdk\Model\ResourcePropertiesResponse',
                 '/getFolders'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResourcePropertiesResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\ResourcePropertiesResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResourcePropertiesResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\ResourcePropertiesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -723,8 +723,8 @@ class FilesAndFoldersApi
      * @param int $limit The number of files to limit the result. Cannot be set higher than 100. If you have more than one hundred files in your directory, make multiple calls to **getResourceList**, incrementing the **offset** parameter, above. (optional, default to 50)
      * @param bool $detailed If true, returns sharedFolder, notifications or other objects associated with specified path. You should only set this paramter to true if you need the additional details, as the API call is less perfomant when it is enabled. (optional, default to false)
      * @param string $pattern Regex string. If not null, perform a search with specified pattern. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResourceResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\ResourceResponse
      */
     public function getResourceList($api_key, $access_token, $path, $sort_by = 'sort_files_name', $sort_order = 'asc', $offset = '0', $limit = '50', $detailed = 'false', $pattern = null)
     {
@@ -746,8 +746,8 @@ class FilesAndFoldersApi
      * @param int $limit The number of files to limit the result. Cannot be set higher than 100. If you have more than one hundred files in your directory, make multiple calls to **getResourceList**, incrementing the **offset** parameter, above. (optional, default to 50)
      * @param bool $detailed If true, returns sharedFolder, notifications or other objects associated with specified path. You should only set this paramter to true if you need the additional details, as the API call is less perfomant when it is enabled. (optional, default to false)
      * @param string $pattern Regex string. If not null, perform a search with specified pattern. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResourceResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\ResourceResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getResourceListWithHttpInfo($api_key, $access_token, $path, $sort_by = 'sort_files_name', $sort_order = 'asc', $offset = '0', $limit = '50', $detailed = 'false', $pattern = null)
     {
@@ -826,15 +826,15 @@ class FilesAndFoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResourceResponse',
+                '\ExaVault\Sdk\Model\ResourceResponse',
                 '/getResourceList'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResourceResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\ResourceResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResourceResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\ResourceResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -851,8 +851,8 @@ class FilesAndFoldersApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param string[] $file_paths Array containing paths of the files or folder to get metadata for. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ResourcePropertiesResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\ResourcePropertiesResponse
      */
     public function getResourceProperties($api_key, $access_token, $file_paths)
     {
@@ -868,8 +868,8 @@ class FilesAndFoldersApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param string[] $file_paths Array containing paths of the files or folder to get metadata for. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ResourcePropertiesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\ResourcePropertiesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getResourcePropertiesWithHttpInfo($api_key, $access_token, $file_paths)
     {
@@ -928,15 +928,15 @@ class FilesAndFoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ResourcePropertiesResponse',
+                '\ExaVault\Sdk\Model\ResourcePropertiesResponse',
                 '/getResourceProperties'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ResourcePropertiesResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\ResourcePropertiesResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ResourcePropertiesResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\ResourcePropertiesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -956,8 +956,8 @@ class FilesAndFoldersApi
      * @param string $destination_path Path relative to account&#39;s home directory, including file name. (required)
      * @param bool $allow_overwrite True if the file should be overwritten, false if different file names should be generated. Call &lt;a href&#x3D;\&quot;#operation/checkFilesExist\&quot;&gt;checkFilesExist&lt;/a&gt; first if you need to determine whether or not a file with the same name already exists. (optional, default to true)
      * @param bool $resume True if upload resume is supported, false if it isn&#39;t. (optional, default to false)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\UrlResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\UrlResponse
      */
     public function getUploadFileUrl($api_key, $access_token, $file_size, $destination_path, $allow_overwrite = 'true', $resume = 'false')
     {
@@ -976,8 +976,8 @@ class FilesAndFoldersApi
      * @param string $destination_path Path relative to account&#39;s home directory, including file name. (required)
      * @param bool $allow_overwrite True if the file should be overwritten, false if different file names should be generated. Call &lt;a href&#x3D;\&quot;#operation/checkFilesExist\&quot;&gt;checkFilesExist&lt;/a&gt; first if you need to determine whether or not a file with the same name already exists. (optional, default to true)
      * @param bool $resume True if upload resume is supported, false if it isn&#39;t. (optional, default to false)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\UrlResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\UrlResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getUploadFileUrlWithHttpInfo($api_key, $access_token, $file_size, $destination_path, $allow_overwrite = 'true', $resume = 'false')
     {
@@ -1048,15 +1048,15 @@ class FilesAndFoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\UrlResponse',
+                '\ExaVault\Sdk\Model\UrlResponse',
                 '/getUploadFileUrl'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\UrlResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\UrlResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\UrlResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\UrlResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1074,8 +1074,8 @@ class FilesAndFoldersApi
      * @param string $access_token Access token required to make the API call. (required)
      * @param string[] $file_paths Array containing file/folder paths to move. (required)
      * @param string $destination_path Remote destination path to move files/folders to. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ModifiedResourcesResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\ModifiedResourcesResponse
      */
     public function moveResources($api_key, $access_token, $file_paths, $destination_path)
     {
@@ -1092,8 +1092,8 @@ class FilesAndFoldersApi
      * @param string $access_token Access token required to make the API call. (required)
      * @param string[] $file_paths Array containing file/folder paths to move. (required)
      * @param string $destination_path Remote destination path to move files/folders to. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ModifiedResourcesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\ModifiedResourcesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function moveResourcesWithHttpInfo($api_key, $access_token, $file_paths, $destination_path)
     {
@@ -1156,15 +1156,15 @@ class FilesAndFoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ModifiedResourcesResponse',
+                '\ExaVault\Sdk\Model\ModifiedResourcesResponse',
                 '/moveResources'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ModifiedResourcesResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\ModifiedResourcesResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ModifiedResourcesResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\ModifiedResourcesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1185,8 +1185,8 @@ class FilesAndFoldersApi
      * @param int $width Overrides sizes. Sets to a specific width. (optional)
      * @param int $height Overrides sizes. Sets to a specific height. (optional)
      * @param int $page Page number for the &#x60;.pdf&#x60; or &#x60;.doc&#x60; files. (optional, default to 0)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\PreviewFileResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\PreviewFileResponse
      */
     public function previewFile($api_key, $access_token, $path, $size, $width = null, $height = null, $page = '0')
     {
@@ -1206,8 +1206,8 @@ class FilesAndFoldersApi
      * @param int $width Overrides sizes. Sets to a specific width. (optional)
      * @param int $height Overrides sizes. Sets to a specific height. (optional)
      * @param int $page Page number for the &#x60;.pdf&#x60; or &#x60;.doc&#x60; files. (optional, default to 0)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\PreviewFileResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\PreviewFileResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function previewFileWithHttpInfo($api_key, $access_token, $path, $size, $width = null, $height = null, $page = '0')
     {
@@ -1282,15 +1282,15 @@ class FilesAndFoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\PreviewFileResponse',
+                '\ExaVault\Sdk\Model\PreviewFileResponse',
                 '/previewFile'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\PreviewFileResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\PreviewFileResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\PreviewFileResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\PreviewFileResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -1308,8 +1308,8 @@ class FilesAndFoldersApi
      * @param string $access_token Access token required to make the API call. (required)
      * @param string $file_path Remote path of the file or folder to rename. (required)
      * @param string $new_name The new name of the file or folder. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Response
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\Response
      */
     public function renameResource($api_key, $access_token, $file_path, $new_name)
     {
@@ -1326,8 +1326,8 @@ class FilesAndFoldersApi
      * @param string $access_token Access token required to make the API call. (required)
      * @param string $file_path Remote path of the file or folder to rename. (required)
      * @param string $new_name The new name of the file or folder. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function renameResourceWithHttpInfo($api_key, $access_token, $file_path, $new_name)
     {
@@ -1390,15 +1390,15 @@ class FilesAndFoldersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\ExaVault\Sdk\Model\Response',
                 '/renameResource'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

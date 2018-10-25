@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Resource object with information about child resources.
- * @package     Swagger\Client
+ * @package     ExaVault\Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -56,10 +56,10 @@ class Resource implements ArrayAccess
       */
     protected static $swaggerTypes = [
         'total_files' => 'int',
-        'resources' => '\Swagger\Client\Model\ResourceProperty[]',
-        'inherited_shares' => '\Swagger\Client\Model\Share[]',
-        'inherited_notifications' => '\Swagger\Client\Model\Notification[]',
-        'inherited_direct_files' => '\Swagger\Client\Model\DirectFile[]'
+        'resources' => '\ExaVault\Sdk\Model\ResourceProperty[]',
+        'inherited_shares' => '\ExaVault\Sdk\Model\Share[]',
+        'inherited_notifications' => '\ExaVault\Sdk\Model\Notification[]',
+        'inherited_direct_files' => '\ExaVault\Sdk\Model\DirectFile[]'
     ];
 
     /**
@@ -208,7 +208,7 @@ class Resource implements ArrayAccess
 
     /**
      * Gets resources
-     * @return \Swagger\Client\Model\ResourceProperty[]
+     * @return \ExaVault\Sdk\Model\ResourceProperty[]
      */
     public function getResources()
     {
@@ -217,7 +217,7 @@ class Resource implements ArrayAccess
 
     /**
      * Sets resources
-     * @param \Swagger\Client\Model\ResourceProperty[] $resources Array of resources inside given resource path.
+     * @param \ExaVault\Sdk\Model\ResourceProperty[] $resources Array of resources inside given resource path.
      * @return $this
      */
     public function setResources($resources)
@@ -229,7 +229,7 @@ class Resource implements ArrayAccess
 
     /**
      * Gets inherited_shares
-     * @return \Swagger\Client\Model\Share[]
+     * @return \ExaVault\Sdk\Model\Share[]
      */
     public function getInheritedShares()
     {
@@ -238,7 +238,7 @@ class Resource implements ArrayAccess
 
     /**
      * Sets inherited_shares
-     * @param \Swagger\Client\Model\Share[] $inherited_shares Array of all shares inside the given resource. Property not emtpy only if `detailed` param was set to `true`.
+     * @param \ExaVault\Sdk\Model\Share[] $inherited_shares Array of all shares inside the given resource. Property not emtpy only if `detailed` param was set to `true`.
      * @return $this
      */
     public function setInheritedShares($inherited_shares)
@@ -250,7 +250,7 @@ class Resource implements ArrayAccess
 
     /**
      * Gets inherited_notifications
-     * @return \Swagger\Client\Model\Notification[]
+     * @return \ExaVault\Sdk\Model\Notification[]
      */
     public function getInheritedNotifications()
     {
@@ -259,7 +259,7 @@ class Resource implements ArrayAccess
 
     /**
      * Sets inherited_notifications
-     * @param \Swagger\Client\Model\Notification[] $inherited_notifications Array of all notifications inside the given resource. Property not emtpy only if `detailed` param was set to `true`.
+     * @param \ExaVault\Sdk\Model\Notification[] $inherited_notifications Array of all notifications inside the given resource. Property not emtpy only if `detailed` param was set to `true`.
      * @return $this
      */
     public function setInheritedNotifications($inherited_notifications)
@@ -271,7 +271,7 @@ class Resource implements ArrayAccess
 
     /**
      * Gets inherited_direct_files
-     * @return \Swagger\Client\Model\DirectFile[]
+     * @return \ExaVault\Sdk\Model\DirectFile[]
      */
     public function getInheritedDirectFiles()
     {
@@ -280,7 +280,7 @@ class Resource implements ArrayAccess
 
     /**
      * Sets inherited_direct_files
-     * @param \Swagger\Client\Model\DirectFile[] $inherited_direct_files Array of all direct file objects inside the given resource. Property not emtpy only if `detailed` param was set to `true`.
+     * @param \ExaVault\Sdk\Model\DirectFile[] $inherited_direct_files Array of all direct file objects inside the given resource. Property not emtpy only if `detailed` param was set to `true`.
      * @return $this
      */
     public function setInheritedDirectFiles($inherited_direct_files)
@@ -341,10 +341,10 @@ class Resource implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

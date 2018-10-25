@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
 
 namespace ExaVault\Sdk\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ExaVault\Sdk\ApiClient;
+use \ExaVault\Sdk\ApiException;
+use \ExaVault\Sdk\Configuration;
+use \ExaVault\Sdk\ObjectSerializer;
 
 /**
  * ActivityApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class ActivityApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ExaVault\Sdk\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ExaVault\Sdk\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ExaVault\Sdk\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class ActivityApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ExaVault\Sdk\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class ActivityApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ExaVault\Sdk\ApiClient $apiClient set the API client
      *
      * @return ActivityApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ExaVault\Sdk\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -100,8 +100,8 @@ class ActivityApi
      * @param string $filter_by Field to search on (optional)
      * @param string $filter Search criteria. For date ranges, use format &#39;start_date::end_date&#39;. (optional)
      * @param int $item_limit Number of logs to return. Can be used for pagination. (optional, default to 25)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\LogResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\LogResponse
      */
     public function getFileActivityLogs($api_key, $access_token, $offset = null, $sort_by = 'sort_logs_date', $sort_order = 'desc', $filter_by = null, $filter = null, $item_limit = '25')
     {
@@ -122,8 +122,8 @@ class ActivityApi
      * @param string $filter_by Field to search on (optional)
      * @param string $filter Search criteria. For date ranges, use format &#39;start_date::end_date&#39;. (optional)
      * @param int $item_limit Number of logs to return. Can be used for pagination. (optional, default to 25)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\LogResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\LogResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getFileActivityLogsWithHttpInfo($api_key, $access_token, $offset = null, $sort_by = 'sort_logs_date', $sort_order = 'desc', $filter_by = null, $filter = null, $item_limit = '25')
     {
@@ -194,15 +194,15 @@ class ActivityApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\LogResponse',
+                '\ExaVault\Sdk\Model\LogResponse',
                 '/getFileActivityLogs'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\LogResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\LogResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\LogResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\LogResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -218,8 +218,8 @@ class ActivityApi
      *
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\NotificationActivityResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\NotificationActivityResponse
      */
     public function getNotificationActivity($api_key, $access_token)
     {
@@ -234,8 +234,8 @@ class ActivityApi
      *
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\NotificationActivityResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\NotificationActivityResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNotificationActivityWithHttpInfo($api_key, $access_token)
     {
@@ -282,15 +282,15 @@ class ActivityApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\NotificationActivityResponse',
+                '\ExaVault\Sdk\Model\NotificationActivityResponse',
                 '/getNotificationActivity'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\NotificationActivityResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\NotificationActivityResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\NotificationActivityResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\NotificationActivityResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -307,8 +307,8 @@ class ActivityApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param int $id ID of the share. Use &lt;a href&#x3D;\&quot;#operation/getShares\&quot;&gt;getShares&lt;/a&gt; if you need to lookup an ID. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ShareActivityResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\ShareActivityResponse
      */
     public function getShareActivity($api_key, $access_token, $id)
     {
@@ -324,8 +324,8 @@ class ActivityApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param int $id ID of the share. Use &lt;a href&#x3D;\&quot;#operation/getShares\&quot;&gt;getShares&lt;/a&gt; if you need to lookup an ID. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ShareActivityResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\ShareActivityResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getShareActivityWithHttpInfo($api_key, $access_token, $id)
     {
@@ -380,15 +380,15 @@ class ActivityApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ShareActivityResponse',
+                '\ExaVault\Sdk\Model\ShareActivityResponse',
                 '/getShareActivity'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ShareActivityResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\ShareActivityResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ShareActivityResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\ShareActivityResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

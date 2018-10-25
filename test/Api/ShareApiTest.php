@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -26,18 +26,18 @@
  * Please update the test case below to test the endpoint.
  */
 
-namespace Swagger\Client;
+namespace ExaVault\Sdk;
 
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\ObjectSerializer;
+use \ExaVault\Sdk\Configuration;
+use \ExaVault\Sdk\ApiClient;
+use \ExaVault\Sdk\ApiException;
+use \ExaVault\Sdk\ObjectSerializer;
 
 /**
  * ShareApiTest Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */

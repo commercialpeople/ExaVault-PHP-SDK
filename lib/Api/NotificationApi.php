@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
 
 namespace ExaVault\Sdk\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ExaVault\Sdk\ApiClient;
+use \ExaVault\Sdk\ApiException;
+use \ExaVault\Sdk\Configuration;
+use \ExaVault\Sdk\ObjectSerializer;
 
 /**
  * NotificationApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class NotificationApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ExaVault\Sdk\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ExaVault\Sdk\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ExaVault\Sdk\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class NotificationApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ExaVault\Sdk\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class NotificationApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ExaVault\Sdk\ApiClient $apiClient set the API client
      *
      * @return NotificationApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ExaVault\Sdk\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -100,8 +100,8 @@ class NotificationApi
      * @param string[] $usernames Determines which users should trigger the notification. Either one of the values above, or an array of usernames. (required)
      * @param bool $send_email Set to true if the user should be notified by email when the notification is triggered. (required)
      * @param string[] $emails Email addresses to send the notification to. If not specified, sends to the authenticated user. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\NotificationResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\NotificationResponse
      */
     public function createNotification($api_key, $access_token, $type, $path, $action, $usernames, $send_email, $emails = null)
     {
@@ -122,8 +122,8 @@ class NotificationApi
      * @param string[] $usernames Determines which users should trigger the notification. Either one of the values above, or an array of usernames. (required)
      * @param bool $send_email Set to true if the user should be notified by email when the notification is triggered. (required)
      * @param string[] $emails Email addresses to send the notification to. If not specified, sends to the authenticated user. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\NotificationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\NotificationResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createNotificationWithHttpInfo($api_key, $access_token, $type, $path, $action, $usernames, $send_email, $emails = null)
     {
@@ -214,15 +214,15 @@ class NotificationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\NotificationResponse',
+                '\ExaVault\Sdk\Model\NotificationResponse',
                 '/createNotification'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\NotificationResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\NotificationResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\NotificationResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\NotificationResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -239,8 +239,8 @@ class NotificationApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param int $id ID of the notification to delete. Use &lt;a href&#x3D;\&quot;#operation/getNotifications\&quot;&gt;getNotifications&lt;/a&gt; if you need to lookup an ID. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Response
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\Response
      */
     public function deleteNotification($api_key, $access_token, $id)
     {
@@ -256,8 +256,8 @@ class NotificationApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param int $id ID of the notification to delete. Use &lt;a href&#x3D;\&quot;#operation/getNotifications\&quot;&gt;getNotifications&lt;/a&gt; if you need to lookup an ID. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteNotificationWithHttpInfo($api_key, $access_token, $id)
     {
@@ -312,15 +312,15 @@ class NotificationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\ExaVault\Sdk\Model\Response',
                 '/deleteNotification'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -337,8 +337,8 @@ class NotificationApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param int $id ID of the notification. Use &lt;a href&#x3D;\&quot;#operation/getNotifications\&quot;&gt;getNotifications&lt;/a&gt; if you need to lookup an ID. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\NotificationResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\NotificationResponse
      */
     public function getNotification($api_key, $access_token, $id)
     {
@@ -354,8 +354,8 @@ class NotificationApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param int $id ID of the notification. Use &lt;a href&#x3D;\&quot;#operation/getNotifications\&quot;&gt;getNotifications&lt;/a&gt; if you need to lookup an ID. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\NotificationResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\NotificationResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNotificationWithHttpInfo($api_key, $access_token, $id)
     {
@@ -410,15 +410,15 @@ class NotificationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\NotificationResponse',
+                '\ExaVault\Sdk\Model\NotificationResponse',
                 '/getNotification'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\NotificationResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\NotificationResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\NotificationResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\NotificationResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -438,8 +438,8 @@ class NotificationApi
      * @param string $sort_by Sort method. (optional, default to sort_notifications_folder_name)
      * @param string $sort_order Sort order. (optional, default to asc)
      * @param string $filter Filter by the provided search terms. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\NotificationsResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\NotificationsResponse
      */
     public function getNotifications($api_key, $access_token, $type, $sort_by = 'sort_notifications_folder_name', $sort_order = 'asc', $filter = null)
     {
@@ -458,8 +458,8 @@ class NotificationApi
      * @param string $sort_by Sort method. (optional, default to sort_notifications_folder_name)
      * @param string $sort_order Sort order. (optional, default to asc)
      * @param string $filter Filter by the provided search terms. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\NotificationsResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\NotificationsResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getNotificationsWithHttpInfo($api_key, $access_token, $type, $sort_by = 'sort_notifications_folder_name', $sort_order = 'asc', $filter = null)
     {
@@ -526,15 +526,15 @@ class NotificationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\NotificationsResponse',
+                '\ExaVault\Sdk\Model\NotificationsResponse',
                 '/getNotifications'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\NotificationsResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\NotificationsResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\NotificationsResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\NotificationsResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -549,9 +549,9 @@ class NotificationApi
      * updateNotification
      *
      * @param string $api_key API key required to make the API call. (required)
-     * @param \Swagger\Client\Model\UpdateNotification $update_notification  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Response
+     * @param \ExaVault\Sdk\Model\UpdateNotification $update_notification  (optional)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\Response
      */
     public function updateNotification($api_key, $update_notification = null)
     {
@@ -565,9 +565,9 @@ class NotificationApi
      * updateNotification
      *
      * @param string $api_key API key required to make the API call. (required)
-     * @param \Swagger\Client\Model\UpdateNotification $update_notification  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @param \ExaVault\Sdk\Model\UpdateNotification $update_notification  (optional)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateNotificationWithHttpInfo($api_key, $update_notification = null)
     {
@@ -611,15 +611,15 @@ class NotificationApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\ExaVault\Sdk\Model\Response',
                 '/updateNotification'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

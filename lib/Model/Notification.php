@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Object containing notification properties.
- * @package     Swagger\Client
+ * @package     ExaVault\Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -62,7 +62,7 @@ class Notification implements ArrayAccess
         'name' => 'string',
         'action' => 'string',
         'usernames' => 'string[]',
-        'recipients' => '\Swagger\Client\Model\NotificationRecipient[]',
+        'recipients' => '\ExaVault\Sdk\Model\NotificationRecipient[]',
         'recipient_emails' => 'string[]',
         'send_email' => 'string',
         'readable_description' => 'string',
@@ -508,7 +508,7 @@ class Notification implements ArrayAccess
 
     /**
      * Gets recipients
-     * @return \Swagger\Client\Model\NotificationRecipient[]
+     * @return \ExaVault\Sdk\Model\NotificationRecipient[]
      */
     public function getRecipients()
     {
@@ -517,7 +517,7 @@ class Notification implements ArrayAccess
 
     /**
      * Sets recipients
-     * @param \Swagger\Client\Model\NotificationRecipient[] $recipients Notification recipients.
+     * @param \ExaVault\Sdk\Model\NotificationRecipient[] $recipients Notification recipients.
      * @return $this
      */
     public function setRecipients($recipients)
@@ -755,10 +755,10 @@ class Notification implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * ModifiedResourcesResponse Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ExaVault\Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -56,7 +56,7 @@ class ModifiedResourcesResponse implements ArrayAccess
     protected static $swaggerTypes = [
         'success' => 'int',
         'error' => 'object',
-        'results' => '\Swagger\Client\Model\ModifiedResource[]'
+        'results' => '\ExaVault\Sdk\Model\ModifiedResource[]'
     ];
 
     /**
@@ -253,7 +253,7 @@ class ModifiedResourcesResponse implements ArrayAccess
 
     /**
      * Gets results
-     * @return \Swagger\Client\Model\ModifiedResource[]
+     * @return \ExaVault\Sdk\Model\ModifiedResource[]
      */
     public function getResults()
     {
@@ -262,7 +262,7 @@ class ModifiedResourcesResponse implements ArrayAccess
 
     /**
      * Sets results
-     * @param \Swagger\Client\Model\ModifiedResource[] $results 
+     * @param \ExaVault\Sdk\Model\ModifiedResource[] $results
      * @return $this
      */
     public function setResults($results)
@@ -323,10 +323,10 @@ class ModifiedResourcesResponse implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

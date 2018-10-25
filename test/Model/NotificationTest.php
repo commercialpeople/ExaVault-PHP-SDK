@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -27,7 +27,7 @@
  * Please update the test case below to test the model.
  */
 
-namespace Swagger\Client;
+namespace ExaVault\Sdk;
 
 /**
  * NotificationTest Class Doc Comment
@@ -35,7 +35,7 @@ namespace Swagger\Client;
  * @category    Class */
 // * @description Object containing notification properties.
 /**
- * @package     Swagger\Client
+ * @package     ExaVault\Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */

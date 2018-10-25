@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description Object contains share properties.
- * @package     Swagger\Client
+ * @package     ExaVault\Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -73,9 +73,9 @@ class Share implements ArrayAccess
         'require_email' => 'bool',
         'file_drop_create_folders' => 'bool',
         'paths' => 'string[]',
-        'recipients' => '\Swagger\Client\Model\ShareRecipient[]',
-        'recipients_with_owner' => '\Swagger\Client\Model\ShareRecipient[]',
-        'messages' => '\Swagger\Client\Model\Message[]',
+        'recipients' => '\ExaVault\Sdk\Model\ShareRecipient[]',
+        'recipients_with_owner' => '\ExaVault\Sdk\Model\ShareRecipient[]',
+        'messages' => '\ExaVault\Sdk\Model\Message[]',
         'inherited' => 'bool',
         'status' => 'int',
         'has_notification' => 'bool',
@@ -799,7 +799,7 @@ class Share implements ArrayAccess
 
     /**
      * Gets recipients
-     * @return \Swagger\Client\Model\ShareRecipient[]
+     * @return \ExaVault\Sdk\Model\ShareRecipient[]
      */
     public function getRecipients()
     {
@@ -808,7 +808,7 @@ class Share implements ArrayAccess
 
     /**
      * Sets recipients
-     * @param \Swagger\Client\Model\ShareRecipient[] $recipients Array of recipients.
+     * @param \ExaVault\Sdk\Model\ShareRecipient[] $recipients Array of recipients.
      * @return $this
      */
     public function setRecipients($recipients)
@@ -820,7 +820,7 @@ class Share implements ArrayAccess
 
     /**
      * Gets recipients_with_owner
-     * @return \Swagger\Client\Model\ShareRecipient[]
+     * @return \ExaVault\Sdk\Model\ShareRecipient[]
      */
     public function getRecipientsWithOwner()
     {
@@ -829,7 +829,7 @@ class Share implements ArrayAccess
 
     /**
      * Sets recipients_with_owner
-     * @param \Swagger\Client\Model\ShareRecipient[] $recipients_with_owner Array of recipients with owner.
+     * @param \ExaVault\Sdk\Model\ShareRecipient[] $recipients_with_owner Array of recipients with owner.
      * @return $this
      */
     public function setRecipientsWithOwner($recipients_with_owner)
@@ -841,7 +841,7 @@ class Share implements ArrayAccess
 
     /**
      * Gets messages
-     * @return \Swagger\Client\Model\Message[]
+     * @return \ExaVault\Sdk\Model\Message[]
      */
     public function getMessages()
     {
@@ -850,7 +850,7 @@ class Share implements ArrayAccess
 
     /**
      * Sets messages
-     * @param \Swagger\Client\Model\Message[] $messages Array of invitation messages.
+     * @param \ExaVault\Sdk\Model\Message[] $messages Array of invitation messages.
      * @return $this
      */
     public function setMessages($messages)
@@ -1046,10 +1046,10 @@ class Share implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

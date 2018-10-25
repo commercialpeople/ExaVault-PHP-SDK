@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -36,7 +36,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description All properties of the resource.
- * @package     Swagger\Client
+ * @package     ExaVault\Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -62,7 +62,7 @@ class ResourceProperty implements ArrayAccess
         'upload_date' => 'string',
         'parent' => 'string',
         'path' => 'string',
-        'shares' => '\Swagger\Client\Model\Share[]',
+        'shares' => '\ExaVault\Sdk\Model\Share[]',
         'notification_settings' => 'string',
         'size' => 'int',
         'previewable' => 'bool',
@@ -414,7 +414,7 @@ class ResourceProperty implements ArrayAccess
 
     /**
      * Gets shares
-     * @return \Swagger\Client\Model\Share[]
+     * @return \ExaVault\Sdk\Model\Share[]
      */
     public function getShares()
     {
@@ -423,7 +423,7 @@ class ResourceProperty implements ArrayAccess
 
     /**
      * Sets shares
-     * @param \Swagger\Client\Model\Share[] $shares Associated shares array.
+     * @param \ExaVault\Sdk\Model\Share[] $shares Associated shares array.
      * @return $this
      */
     public function setShares($shares)
@@ -598,10 +598,10 @@ class ResourceProperty implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 

@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -28,16 +28,16 @@
 
 namespace ExaVault\Sdk\Api;
 
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ObjectSerializer;
+use \ExaVault\Sdk\ApiClient;
+use \ExaVault\Sdk\ApiException;
+use \ExaVault\Sdk\Configuration;
+use \ExaVault\Sdk\ObjectSerializer;
 
 /**
  * ShareApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -46,16 +46,16 @@ class ShareApi
     /**
      * API Client
      *
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \ExaVault\Sdk\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor
      *
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \ExaVault\Sdk\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\Swagger\Client\ApiClient $apiClient = null)
+    public function __construct(\ExaVault\Sdk\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -67,7 +67,7 @@ class ShareApi
     /**
      * Get API client
      *
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \ExaVault\Sdk\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -77,11 +77,11 @@ class ShareApi
     /**
      * Set the API client
      *
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \ExaVault\Sdk\ApiClient $apiClient set the API client
      *
      * @return ShareApi
      */
-    public function setApiClient(\Swagger\Client\ApiClient $apiClient)
+    public function setApiClient(\ExaVault\Sdk\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
         return $this;
@@ -110,8 +110,8 @@ class ShareApi
      * @param bool $has_notification True if the user should be notified about activity on this share. (optional, default to false)
      * @param string[] $notification_emails An array of recipients who should receive notification emails. (optional)
      * @param bool $file_drop_create_folders If true, all receive folder submissions will be uploaded separate folders (only applicable for the &#x60;receive&#x60; share type). (optional, default to false)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ShareResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\ShareResponse
      */
     public function createShare($api_key, $access_token, $type, $name, $file_paths, $access_mode, $subject = null, $message = null, $emails = null, $cc_email = null, $require_email = 'false', $embed = 'false', $is_public = 'false', $password = null, $expiration = null, $has_notification = 'false', $notification_emails = null, $file_drop_create_folders = 'false')
     {
@@ -142,8 +142,8 @@ class ShareApi
      * @param bool $has_notification True if the user should be notified about activity on this share. (optional, default to false)
      * @param string[] $notification_emails An array of recipients who should receive notification emails. (optional)
      * @param bool $file_drop_create_folders If true, all receive folder submissions will be uploaded separate folders (only applicable for the &#x60;receive&#x60; share type). (optional, default to false)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ShareResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\ShareResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createShareWithHttpInfo($api_key, $access_token, $type, $name, $file_paths, $access_mode, $subject = null, $message = null, $emails = null, $cc_email = null, $require_email = 'false', $embed = 'false', $is_public = 'false', $password = null, $expiration = null, $has_notification = 'false', $notification_emails = null, $file_drop_create_folders = 'false')
     {
@@ -270,15 +270,15 @@ class ShareApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ShareResponse',
+                '\ExaVault\Sdk\Model\ShareResponse',
                 '/createShare'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ShareResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\ShareResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ShareResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\ShareResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -295,8 +295,8 @@ class ShareApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param int $id ID of the share to delete. Use &lt;a href&#x3D;\&quot;#operation/getShares\&quot;&gt;getShares&lt;/a&gt; if you need to lookup an ID. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Response
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\Response
      */
     public function deleteShare($api_key, $access_token, $id)
     {
@@ -312,8 +312,8 @@ class ShareApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param int $id ID of the share to delete. Use &lt;a href&#x3D;\&quot;#operation/getShares\&quot;&gt;getShares&lt;/a&gt; if you need to lookup an ID. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteShareWithHttpInfo($api_key, $access_token, $id)
     {
@@ -368,15 +368,15 @@ class ShareApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\ExaVault\Sdk\Model\Response',
                 '/deleteShare'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -393,8 +393,8 @@ class ShareApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param int $id ID of the requested share. Note this is our internal ID, not the share hash. Use &lt;a href&#x3D;\&quot;#operation/getShares\&quot;&gt;getShares&lt;/a&gt; if you need to lookup an ID. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ShareResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\ShareResponse
      */
     public function getShare($api_key, $access_token, $id)
     {
@@ -410,8 +410,8 @@ class ShareApi
      * @param string $api_key API key required to make the API call. (required)
      * @param string $access_token Access token required to make the API call. (required)
      * @param int $id ID of the requested share. Note this is our internal ID, not the share hash. Use &lt;a href&#x3D;\&quot;#operation/getShares\&quot;&gt;getShares&lt;/a&gt; if you need to lookup an ID. (required)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ShareResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\ShareResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getShareWithHttpInfo($api_key, $access_token, $id)
     {
@@ -466,15 +466,15 @@ class ShareApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ShareResponse',
+                '\ExaVault\Sdk\Model\ShareResponse',
                 '/getShare'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ShareResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\ShareResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ShareResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\ShareResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -497,8 +497,8 @@ class ShareApi
      * @param string $include Filter returned shares. You can get all shares in the account, only active ones or shares you own. (optional, default to all)
      * @param int $offset Start position of results to return, for pagination. Defaults to zero (0). (optional)
      * @param int $limit Maximum number of shares to return. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\SharesResponse
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\SharesResponse
      */
     public function getShares($api_key, $access_token, $sort_by, $sort_order, $type = null, $filter = null, $include = 'all', $offset = null, $limit = null)
     {
@@ -520,8 +520,8 @@ class ShareApi
      * @param string $include Filter returned shares. You can get all shares in the account, only active ones or shares you own. (optional, default to all)
      * @param int $offset Start position of results to return, for pagination. Defaults to zero (0). (optional)
      * @param int $limit Maximum number of shares to return. (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\SharesResponse, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\SharesResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getSharesWithHttpInfo($api_key, $access_token, $sort_by, $sort_order, $type = null, $filter = null, $include = 'all', $offset = null, $limit = null)
     {
@@ -604,15 +604,15 @@ class ShareApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\SharesResponse',
+                '\ExaVault\Sdk\Model\SharesResponse',
                 '/getShares'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\SharesResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\SharesResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\SharesResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\SharesResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -644,8 +644,8 @@ class ShareApi
      * @param bool $has_notification True if the user should be notified about activity on this share. (optional, default to false)
      * @param string[] $notification_emails An array of recipients who should receive notification emails. (optional)
      * @param bool $file_drop_create_folders If true, all receive folder submissions will be uploaded separate folders (only applicable for the &#x60;receive&#x60; share type). (optional, default to false)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Response
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return \ExaVault\Sdk\Model\Response
      */
     public function updateShare($api_key, $access_token, $id, $name = null, $file_paths = null, $access_mode = null, $subject = null, $message = null, $emails = null, $cc_email = null, $require_email = 'false', $embed = 'false', $is_public = 'false', $password = null, $expiration = null, $has_notification = 'false', $notification_emails = null, $file_drop_create_folders = 'false')
     {
@@ -676,8 +676,8 @@ class ShareApi
      * @param bool $has_notification True if the user should be notified about activity on this share. (optional, default to false)
      * @param string[] $notification_emails An array of recipients who should receive notification emails. (optional)
      * @param bool $file_drop_create_folders If true, all receive folder submissions will be uploaded separate folders (only applicable for the &#x60;receive&#x60; share type). (optional, default to false)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Response, HTTP status code, HTTP response headers (array of strings)
+     * @throws \ExaVault\Sdk\ApiException on non-2xx response
+     * @return array of \ExaVault\Sdk\Model\Response, HTTP status code, HTTP response headers (array of strings)
      */
     public function updateShareWithHttpInfo($api_key, $access_token, $id, $name = null, $file_paths = null, $access_mode = null, $subject = null, $message = null, $emails = null, $cc_email = null, $require_email = 'false', $embed = 'false', $is_public = 'false', $password = null, $expiration = null, $has_notification = 'false', $notification_emails = null, $file_drop_create_folders = 'false')
     {
@@ -792,15 +792,15 @@ class ShareApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Response',
+                '\ExaVault\Sdk\Model\Response',
                 '/updateShare'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Response', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\ExaVault\Sdk\Model\Response', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Response', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\ExaVault\Sdk\Model\Response', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

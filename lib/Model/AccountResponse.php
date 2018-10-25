@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  ExaVault\Sdk
  * @author   Swaagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
@@ -35,7 +35,7 @@ use \ArrayAccess;
  * AccountResponse Class Doc Comment
  *
  * @category    Class
- * @package     Swagger\Client
+ * @package     ExaVault\Sdk
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
@@ -56,7 +56,7 @@ class AccountResponse implements ArrayAccess
     protected static $swaggerTypes = [
         'success' => 'int',
         'error' => 'object',
-        'results' => '\Swagger\Client\Model\Account'
+        'results' => '\ExaVault\Sdk\Model\Account'
     ];
 
     /**
@@ -251,7 +251,7 @@ class AccountResponse implements ArrayAccess
 
     /**
      * Gets results
-     * @return \Swagger\Client\Model\Account
+     * @return \ExaVault\Sdk\Model\Account
      */
     public function getResults()
     {
@@ -260,7 +260,7 @@ class AccountResponse implements ArrayAccess
 
     /**
      * Sets results
-     * @param \Swagger\Client\Model\Account $results
+     * @param \ExaVault\Sdk\Model\Account $results
      * @return $this
      */
     public function setResults($results)
@@ -321,10 +321,10 @@ class AccountResponse implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\Swagger\Client\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 
