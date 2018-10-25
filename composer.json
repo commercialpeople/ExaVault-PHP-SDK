@@ -10,7 +10,7 @@
     "require": {},
     "autoload": {
         "psr-4": {
-            "ExaVault\\Sdk": "./lib"
+            "ExaVault\\Sdk\\": "./lib"
         }
     }
 }
