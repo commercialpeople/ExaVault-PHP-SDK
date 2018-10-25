@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client;
+namespace ExaVault\Sdk;
 
 /**
  * ApiClient Class Doc Comment

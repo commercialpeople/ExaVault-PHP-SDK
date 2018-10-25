@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Model;
+namespace ExaVault\Sdk\Model;
 
 use \ArrayAccess;
 

@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client\Api;
+namespace ExaVault\Sdk\Api;
 
 use \Swagger\Client\ApiClient;
 use \Swagger\Client\ApiException;

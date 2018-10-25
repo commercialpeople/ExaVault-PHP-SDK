@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client;
+namespace ExaVault\Sdk;
 
 /**
  * Configuration Class Doc Comment
