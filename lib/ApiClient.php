@@ -66,7 +66,7 @@ class ApiClient
      *
      * @param Configuration $config config for this ApiClient
      */
-    public function __construct(\ExaVault\Sdk\Configuration $config = null)
+    public function __construct(Configuration $config = null)
     {
         if ($config === null) {
             $config = Configuration::getDefaultConfiguration();
@@ -200,9 +200,9 @@ class ApiClient
             if(isset($queryParams['filePaths[]'])) {
                 $filePaths = $queryParams['filePaths[]'];
                 $filePaths = explode(",", $filePaths);
-                $formatedPaths = array_map( function($val) { return $val = 'filePaths[]=' . urlencode($val) ;}, $filePaths);
+                $formattedPaths = array_map( function($val) { return $val = 'filePaths[]=' . urlencode($val) ;}, $filePaths);
                 unset($queryParams['filePaths[]']);
-                $url = ($url . '?' . http_build_query($queryParams) . '&' . join('&', $formatedPaths) ); 
+                $url = ($url . '?' . http_build_query($queryParams) . '&' . join('&', $formattedPaths) );
             /* EV add our specific case for filePaths[] */
             } else {
                 $url = ($url . '?' . http_build_query($queryParams)); 

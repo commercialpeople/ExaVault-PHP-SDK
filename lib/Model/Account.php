@@ -30,6 +30,7 @@
 namespace ExaVault\Sdk\Model;
 
 use \ArrayAccess;
+use ExaVault\Sdk\ObjectSerializer;
 
 /**
  * Account Class Doc Comment
@@ -1113,10 +1114,10 @@ class Account implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\ExaVault\Sdk\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
 
